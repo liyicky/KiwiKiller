@@ -1,0 +1,11 @@
+{
+    "applications": {
+        "KiwiKiller": {
+            "applicationId": "B8tucjcAdT0D7b95nPWQfWn6mtBryuHOS9jbbPx5", 
+            "masterKey": "vyqSsvunSjWz1VutbysJ3mU6DsJHXVdZzZjRa2Ty"
+        }, 
+        "_default": {
+            "link": "KiwiKiller"
+        }
+    }
+}
