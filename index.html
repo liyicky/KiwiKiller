@@ -5,17 +5,19 @@
   <meta name="description" content="Kiwi Killer">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 
-  <link href="/stylesheets/main.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
 
   <meta name="viewport" id="vp" content="initial-scale=1.0, user-scalable=no, maximum-scale=1, width=device-width" />
   <meta name="viewport" id="vp" content="initial-scale=1.0, user-scalable=no, maximum-scale=1" media="(device-height: 568px)" />
   <meta name="apple-mobile-web-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="js/underscore.js"></script>
   <script type="text/javascript" src="js/backbone.js"></script>
   <script type="text/javascript" src="js/spin.min.js"></script>
   <script type="text/javascript" src="https://www.parsecdn.com/js/parse-1.2.7.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
 </head>
 
 <body>
@@ -23,11 +25,30 @@
     Parse.initialize("B8tucjcAdT0D7b95nPWQfWn6mtBryuHOS9jbbPx5", "iXlH4jQnxcWrpEEBNMdp5B2JrBlQ1PUqTRP9BKNW");
   </script>
 
+  <div id="stage" class="">
+    <h1 id="unsupported">Sorry nigga</h1>
+  </div>
+  <h1 id="landscape">Sorry nigga</h1>
+
+  <script type="text/template" id="_tile_pair">
+    <div class="tile" />
+  </script>
+
   <script type="text/template" id="_menu">
     <% var sizeClass = $(window).width() > 550 ? "large" : "small"; %>
-    <div class="title <<%= sizeClass %>"></div>
-    <div id="play_button" class="menu_item first <% sizeClass %>">
+    <div class="title <%= sizeClass %>"></div>
+    <div id="play_button" class="menu_item first <%= sizeClass %>">
       PLAY
     </div>
   </script>
+
+  <script type="text/template" id="_cat">
+    <% var sizeClass = $(window).width() > 550 ? "large" : "small"; %>
+    <% for (var i=0;i<5;i++) { %>
+      <div class="sprite <%= sizeClass %> cat_sprite_<%= i+1 %>"
+        <%= (i+1) !== spriteIndex ? "style='display: none'" : "" %>>
+      </div>
+    <% } %>
+  </script>
+
 </body>
