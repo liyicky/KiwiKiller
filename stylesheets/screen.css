@@ -584,71 +584,77 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 /* Styles */
 @font-face {
-  font-family: "Helvetica Neue";
+  font-family: "Fedra11-Normal";
+  src: url("../assets/Fedra11-Normal.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
-/* line 317, ../sass/screen.scss */
+/* line 318, ../sass/screen.scss */
 body {
   background: url("../assets/bg.png") repeat 0 0, #600;
 }
 
-/* line 321, ../sass/screen.scss */
+/* line 322, ../sass/screen.scss */
 #unsupported {
   display: none;
   text-align: center;
-  font-family: "Helvatica Neue", Helvetica, Arial;
+  font-family: Fedra11-Normal, "Helvatica Neue", Helvetica, Arial;
   font-size: 30px;
   padding-top: 100px;
 }
 
-/* line 329, ../sass/screen.scss */
+/* line 330, ../sass/screen.scss */
 #landscape {
   display: none;
   text-align: center;
-  font-family: "Helvetica Neue", Helvetica, Arial;
+  font-family: Fedra11-Normal, "Helvetica Neue", Helvetica, Arial;
   font-size: 30px;
   padding-top: 100px;
   color: white;
 }
 
 @media only screen and (orientation: portrait) {
-  /* line 339, ../sass/screen.scss */
+  /* line 340, ../sass/screen.scss */
   #landscape {
     display: none;
   }
 
-  /* line 340, ../sass/screen.scss */
+  /* line 341, ../sass/screen.scss */
   #stage {
     display: block;
   }
 }
 @media only screen and (orientation: landscape) and (max-device-height: 568px) {
-  /* line 344, ../sass/screen.scss */
+  /* line 345, ../sass/screen.scss */
   #landscape {
     display: block;
   }
 
-  /* line 345, ../sass/screen.scss */
+  /* line 346, ../sass/screen.scss */
   #stage {
     display: none;
   }
 }
-/* line 348, ../sass/screen.scss */
+/* line 349, ../sass/screen.scss */
 #stage {
   -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
   user-select: none;
-  background-image: liner-gradient(#A2C9FD, #DDF6FF);
-  background-color: #bcd8fe;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2EyYzlmZCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2RkZjZmZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a2c9fd), color-stop(100%, #ddf6ff));
+  background-image: -moz-linear-gradient(#a2c9fd, #ddf6ff);
+  background-image: -webkit-linear-gradient(#a2c9fd, #ddf6ff);
+  background-image: linear-gradient(#a2c9fd, #ddf6ff);
+  background-color: white;
   max-height: 1000px;
   margin: auto;
   height: 1000px;
   position: relative;
   overflow: hidden;
 }
-/* line 362, ../sass/screen.scss */
+/* line 363, ../sass/screen.scss */
 #stage .tile {
   width: 100%;
   background: url(/assets/tiles.png) repeat-x;
@@ -658,15 +664,15 @@ body {
   background-size: contain;
   z-index: 1;
 }
-/* line 371, ../sass/screen.scss */
+/* line 372, ../sass/screen.scss */
 #stage .tile.top {
   bottom: 44px;
 }
-/* line 375, ../sass/screen.scss */
+/* line 376, ../sass/screen.scss */
 #stage .tile.bottom {
   bottom: -10px;
 }
-/* line 381, ../sass/screen.scss */
+/* line 382, ../sass/screen.scss */
 #stage .menu_scene .title {
   display: block;
   margin-left: auto;
@@ -685,13 +691,13 @@ body {
   position: relative;
 }
 @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min0resolution: 1.3dppx) {
-  /* line 381, ../sass/screen.scss */
+  /* line 382, ../sass/screen.scss */
   #stage .menu_scene .title {
     background-image: url("/assets/logo@2x.png");
     background-size: 500px 175px;
   }
 }
-/* line 396, ../sass/screen.scss */
+/* line 397, ../sass/screen.scss */
 #stage .menu_scene .title.removal {
   -webkit-anmiantion-delay: 0.3;
   -moz-anmiantion-delay: 0.3;
@@ -699,14 +705,14 @@ body {
   -o-anmiantion-delay: 0.3;
   anmiantion-delay: 0.3;
 }
-/* line 401, ../sass/screen.scss */
+/* line 402, ../sass/screen.scss */
 #stage .menu_scene .menu_item {
   -webkit-animation: dropMenu 0.1s 0s ease 1 normal both;
   -moz-animation: dropMenu 0.1s 0s ease 1 normal both;
   -ms-animation: dropMenu 0.1s 0s ease 1 normal both;
   animation: dropMenu 0.1s 0s ease 1 normal both;
 }
-/* line 404, ../sass/screen.scss */
+/* line 405, ../sass/screen.scss */
 #stage .menu_scene .menu_item.first {
   -webkit-anmiantion-delay: 1.1s;
   -moz-anmiantion-delay: 1.1s;
@@ -714,7 +720,7 @@ body {
   -o-anmiantion-delay: 1.1s;
   anmiantion-delay: 1.1s;
 }
-/* line 407, ../sass/screen.scss */
+/* line 408, ../sass/screen.scss */
 #stage .menu_scene .menu_item.first.removal {
   -webkit-anmiantion-delay: 0s;
   -moz-anmiantion-delay: 0s;
@@ -722,7 +728,7 @@ body {
   -o-anmiantion-delay: 0s;
   anmiantion-delay: 0s;
 }
-/* line 412, ../sass/screen.scss */
+/* line 413, ../sass/screen.scss */
 #stage .menu_scene .menu_item.second {
   -webkit-anmiantion-delay: 1.2s;
   -moz-anmiantion-delay: 1.2s;
@@ -730,7 +736,7 @@ body {
   -o-anmiantion-delay: 1.2s;
   anmiantion-delay: 1.2s;
 }
-/* line 415, ../sass/screen.scss */
+/* line 416, ../sass/screen.scss */
 #stage .menu_scene .menu_item.second.removal {
   -webkit-anmiantion-delay: 0.1s;
   -moz-anmiantion-delay: 0.1s;
@@ -738,7 +744,7 @@ body {
   -o-anmiantion-delay: 0.1s;
   anmiantion-delay: 0.1s;
 }
-/* line 420, ../sass/screen.scss */
+/* line 421, ../sass/screen.scss */
 #stage .menu_scene .menu_item.third {
   -webkit-anmiantion-delay: 1.3s;
   -moz-anmiantion-delay: 1.3s;
@@ -746,7 +752,7 @@ body {
   -o-anmiantion-delay: 1.3s;
   anmiantion-delay: 1.3s;
 }
-/* line 423, ../sass/screen.scss */
+/* line 424, ../sass/screen.scss */
 #stage .menu_scene .menu_item.third.removal {
   -webkit-anmiantion-delay: 0.2s;
   -moz-anmiantion-delay: 0.2s;
@@ -754,7 +760,7 @@ body {
   -o-anmiantion-delay: 0.2s;
   anmiantion-delay: 0.2s;
 }
-/* line 428, ../sass/screen.scss */
+/* line 429, ../sass/screen.scss */
 #stage .menu_scene .menu_item.forth {
   -webkit-anmiantion-delay: 1.4s;
   -moz-anmiantion-delay: 1.4s;
@@ -762,7 +768,7 @@ body {
   -o-anmiantion-delay: 1.4s;
   anmiantion-delay: 1.4s;
 }
-/* line 431, ../sass/screen.scss */
+/* line 432, ../sass/screen.scss */
 #stage .menu_scene .menu_item.forth.removal {
   -webkit-anmiantion-delay: 0.3s;
   -moz-anmiantion-delay: 0.3s;
@@ -770,7 +776,7 @@ body {
   -o-anmiantion-delay: 0.3s;
   anmiantion-delay: 0.3s;
 }
-/* line 438, ../sass/screen.scss */
+/* line 439, ../sass/screen.scss */
 #stage .menu_item {
   display: block;
   width: 110px;
@@ -811,7 +817,7 @@ body {
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
-  font-family: "Helvatica Neue", Helvetica;
+  font-family: Fedra11-Normal, "Helvatica Neue", Helvetica;
   font-size: 22px;
   padding-top: 13px;
   height: 37px;
@@ -850,26 +856,26 @@ body {
   color: #bcbdbe;
   border: 1px solid #03150b;
 }
-/* line 451, ../sass/screen.scss */
+/* line 452, ../sass/screen.scss */
 #stage .menu_item.large {
   font-size: 25px;
   width: 250px;
 }
-/* line 456, ../sass/screen.scss */
+/* line 457, ../sass/screen.scss */
 #stage .menu_item.small {
   font-size: 22px;
   width: 150px;
 }
-/* line 464, ../sass/screen.scss */
+/* line 465, ../sass/screen.scss */
 #stage .game_scene #hud {
-  font-family: "Helvetica Neue", Helvetica;
+  font-family: Fedra11-Normal, "Helvetica Neue", Helvetica;
   font-size: 30px;
   color: #149447;
   position: absolute;
   top: 30px;
   left: 30px;
 }
-/* line 472, ../sass/screen.scss */
+/* line 473, ../sass/screen.scss */
 #stage .game_scene #hud p {
   -webkit-animation: showHUD 0.2s 0s ease 1 normal both;
   -moz-animation: showHUD 0.2s 0s ease 1 normal both;
@@ -880,15 +886,15 @@ body {
   text-shadow: 0 1px 0 #1B724C, rgba(0, 0, 0, 0.15) 0px 2px 2px;
   color: #159B56;
 }
-/* line 479, ../sass/screen.scss */
+/* line 480, ../sass/screen.scss */
 #stage .game_scene #hud p.small {
   font-size: 20px;
 }
-/* line 482, ../sass/screen.scss */
+/* line 483, ../sass/screen.scss */
 #stage .game_scene #hud p.small span {
   font-size: 15px;
 }
-/* line 488, ../sass/screen.scss */
+/* line 489, ../sass/screen.scss */
 #stage .game_scene #hud #game_score {
   margin-top: 20px;
   -webkit-anmiantion-delay: 0.1s;
@@ -897,7 +903,7 @@ body {
   -o-anmiantion-delay: 0.1s;
   anmiantion-delay: 0.1s;
 }
-/* line 493, ../sass/screen.scss */
+/* line 494, ../sass/screen.scss */
 #stage .game_scene #hud #game_lives {
   margin-top: 20px;
   -webkit-anmiantion-delay: 0.2s;
@@ -906,13 +912,13 @@ body {
   -o-anmiantion-delay: 0.2s;
   anmiantion-delay: 0.2s;
 }
-/* line 498, ../sass/screen.scss */
+/* line 499, ../sass/screen.scss */
 #stage .game_scene #hud span {
   font-size: 20px;
 }
-/* line 503, ../sass/screen.scss */
+/* line 504, ../sass/screen.scss */
 #stage .game_scene .level_lable {
-  font-family: "Helvetica Neue", Helvetica;
+  font-family: Fedra11-Normal, "Helvetica Neue", Helvetica;
   font-size: 30px;
   text-shadow: 0 1px 0 #1B724C, rgba(0, 0, 0, 0.15) 0px 2px 2px;
   color: #159B56;
@@ -928,14 +934,14 @@ body {
   -ms-animation: dropMessage 0.5s 0s ease 1 normal both;
   animation: dropMessage 0.5s 0s ease 1 normal both;
 }
-/* line 517, ../sass/screen.scss */
+/* line 518, ../sass/screen.scss */
 #stage .game_scene .level_lable.removal {
   -webkit-animation: raiseMessage 0.5s 0s ease 1 normal both;
   -moz-animation: raiseMessage 0.5s 0s ease 1 normal both;
   -ms-animation: raiseMessage 0.5s 0s ease 1 normal both;
   animation: raiseMessage 0.5s 0s ease 1 normal both;
 }
-/* line 522, ../sass/screen.scss */
+/* line 523, ../sass/screen.scss */
 #stage .game_scene .kiwi {
   width: 28px;
   height: 18px;
@@ -946,17 +952,17 @@ body {
   z-index: 3;
 }
 @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min0resolution: 1.3dppx) {
-  /* line 522, ../sass/screen.scss */
+  /* line 523, ../sass/screen.scss */
   #stage .game_scene .kiwi {
     background-image: url("assets/kiwi/kiwiprofilestaticx4.gif");
     background-size: 28px 18px;
   }
 }
-/* line 532, ../sass/screen.scss */
+/* line 533, ../sass/screen.scss */
 #stage .game_scene .kiwi .sprite {
   height: 100px;
 }
-/* line 537, ../sass/screen.scss */
+/* line 538, ../sass/screen.scss */
 #stage .game_scene .back_button {
   -webkit-animation: xDrop 0.5s 0s linear 1 normal both;
   -moz-animation: xDrop 0.5s 0s linear 1 normal both;
@@ -1003,7 +1009,7 @@ body {
   width: 0px;
   height: 35px;
   padding: 11px 34px 2px 16px;
-  font-family: "Helvetica Neue", Helvetica;
+  font-family: Fedra11-Normal, "Helvetica Neue", Helvetica;
   font-size: 22px;
   z-index: 11;
   position: absolute;
@@ -1042,14 +1048,14 @@ body {
   color: #bcbdbe;
   border: 1px solid #03150b;
 }
-/* line 553, ../sass/screen.scss */
+/* line 554, ../sass/screen.scss */
 #stage .game_over_scene {
   text-align: center;
   position: absolute;
   z-index: 10;
   width: 100%;
 }
-/* line 559, ../sass/screen.scss */
+/* line 560, ../sass/screen.scss */
 #stage .game_over_scene .summary {
   -webkit-animation: dropScores 0.1s 0s ease 1 normal both;
   -moz-animation: dropScores 0.1s 0s ease 1 normal both;
@@ -1096,20 +1102,20 @@ body {
   height: 340px;
   z-index: 11;
   font-size: 25px;
-  font-family: "Helvetica Neue", Helvetica;
+  font-family: Fedra11-Normal, "Helvetica Neue", Helvetica;
 }
-/* line 571, ../sass/screen.scss */
+/* line 572, ../sass/screen.scss */
 #stage .game_over_scene .summary.small {
   margin-top: 20px;
 }
-/* line 575, ../sass/screen.scss */
+/* line 576, ../sass/screen.scss */
 #stage .game_over_scene .summary .title {
-  font-family: "Helvetica Neue", Helvetica;
+  font-family: Fedra11-Normal, "Helvetica Neue", Helvetica;
   padding-top: 40px;
   padding-bottom: 10px;
   z-index: 200;
 }
-/* line 582, ../sass/screen.scss */
+/* line 583, ../sass/screen.scss */
 #stage .game_over_scene .summary .end_score {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -1128,14 +1134,14 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 150px;
-  font-family: "Helvetica Neue", Helvetica;
+  font-family: Fedra11-Normal, "Helvetica Neue", Helvetica;
   font-size: 25px;
 }
-/* line 596, ../sass/screen.scss */
+/* line 597, ../sass/screen.scss */
 #stage .game_over_scene .summary .end_score span {
-  font-family: "Helvetica Neue", Helvetica;
+  font-family: Fedra11-Normal, "Helvetica Neue", Helvetica;
 }
-/* line 599, ../sass/screen.scss */
+/* line 600, ../sass/screen.scss */
 #stage .game_over_scene .summary .end_score span.score {
   display: block;
   font-size: 60px;
@@ -1146,22 +1152,22 @@ body {
   -ms-animation: pulsate 0.5s 0s ease-in-out infinite alternate both;
   animation: pulsate 0.5s 0s ease-in-out infinite alternate both;
 }
-/* line 607, ../sass/screen.scss */
+/* line 608, ../sass/screen.scss */
 #stage .game_over_scene .summary .end_score span.lable {
   display: block;
   font-size: 15px;
   padding-bottom: 10px;
 }
-/* line 615, ../sass/screen.scss */
+/* line 616, ../sass/screen.scss */
 #stage .game_over_scene .summary .message {
-  font-family: "Helvetica Neue", Helvetica;
+  font-family: Fedra11-Normal, "Helvetica Neue", Helvetica;
   padding-top: 10px;
   -webkit-animation: dropMessage 0.5s 0.5s ease 1 normal both;
   -moz-animation: dropMessage 0.5s 0.5s ease 1 normal both;
   -ms-animation: dropMessage 0.5s 0.5s ease 1 normal both;
   animation: dropMessage 0.5s 0.5s ease 1 normal both;
 }
-/* line 621, ../sass/screen.scss */
+/* line 622, ../sass/screen.scss */
 #stage .game_over_scene .summary .facebook_button {
   display: block;
   width: 110px;
@@ -1202,7 +1208,7 @@ body {
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
-  font-family: "Helvetica Neue", Helvetica;
+  font-family: Fedra11-Normal, "Helvetica Neue", Helvetica;
   font-size: 15px;
   padding-top: 5px;
   height: 32px;
@@ -1247,7 +1253,7 @@ body {
   color: #bcbdbe;
   border: 1px solid black;
 }
-/* line 638, ../sass/screen.scss */
+/* line 639, ../sass/screen.scss */
 #stage .game_over_scene .summary .facebook_button img {
   position: relative;
   top: 4px;
@@ -1255,11 +1261,11 @@ body {
   margin-bottom: 2px;
   margin-top: -3px;
 }
-/* line 646, ../sass/screen.scss */
+/* line 647, ../sass/screen.scss */
 #stage .game_over_scene .summary .facebook_button .spinner {
   margin-top: -2px;
 }
-/* line 652, ../sass/screen.scss */
+/* line 653, ../sass/screen.scss */
 #stage .game_over_scene .menu_button {
   display: inline-block;
   margin-right: 10px;
@@ -1268,7 +1274,7 @@ body {
   -ms-animation: dropMenu 0.1s 0.2s ease 1 normal both;
   animation: dropMenu 0.1s 0.2s ease 1 normal both;
 }
-/* line 658, ../sass/screen.scss */
+/* line 659, ../sass/screen.scss */
 #stage .game_over_scene .menu_button.removal {
   -webkit-anmiantion-delay: 0.1s;
   -moz-anmiantion-delay: 0.1s;
@@ -1276,7 +1282,7 @@ body {
   -o-anmiantion-delay: 0.1s;
   anmiantion-delay: 0.1s;
 }
-/* line 663, ../sass/screen.scss */
+/* line 664, ../sass/screen.scss */
 #stage .game_over_scene .replay_button {
   display: inline-block;
   margin-left: 10px;
@@ -1285,7 +1291,7 @@ body {
   -ms-animation: dropMenu 0.1s 0.3s ease 1 normal both;
   animation: dropMenu 0.1s 0.3s ease 1 normal both;
 }
-/* line 668, ../sass/screen.scss */
+/* line 669, ../sass/screen.scss */
 #stage .game_over_scene .replay_button.removal {
   -webkit-anmiantion-delay: 0.2s;
   -moz-anmiantion-delay: 0.2s;
@@ -1293,20 +1299,20 @@ body {
   -o-anmiantion-delay: 0.2s;
   anmiantion-delay: 0.2s;
 }
-/* line 673, ../sass/screen.scss */
+/* line 674, ../sass/screen.scss */
 #stage .game_over_scene .menu_item.small {
   padding-left: 0px;
   padding-right: 0px;
   margin-top: 15px;
   width: 120px;
 }
-/* line 681, ../sass/screen.scss */
+/* line 682, ../sass/screen.scss */
 #stage .highscore_scene {
   position: absolute;
   width: 100%;
   z-index: 10;
 }
-/* line 686, ../sass/screen.scss */
+/* line 687, ../sass/screen.scss */
 #stage .highscore_scene .highscore {
   -webkit-animation: dropScores 0.3s 1.5s ease 1 normal both;
   -moz-animation: dropScores 0.3s 1.5s ease 1 normal both;
@@ -1354,7 +1360,7 @@ body {
   z-index: 11;
   overflow: scroll;
 }
-/* line 697, ../sass/screen.scss */
+/* line 698, ../sass/screen.scss */
 #stage .highscore_scene .highscore.removal {
   -webkit-anmiantion-delay: 0.2s;
   -moz-anmiantion-delay: 0.2s;
@@ -1362,82 +1368,82 @@ body {
   -o-anmiantion-delay: 0.2s;
   anmiantion-delay: 0.2s;
 }
-/* line 701, ../sass/screen.scss */
+/* line 702, ../sass/screen.scss */
 #stage .highscore_scene .highscore p {
-  font-family: "Helvetica Neue", Helvetica;
+  font-family: Fedra11-Normal, "Helvetica Neue", Helvetica;
   font-size: 25px;
   margin-top: 15px;
 }
-/* line 707, ../sass/screen.scss */
+/* line 708, ../sass/screen.scss */
 #stage .highscore_scene .highscore #score_table {
   width: 100%;
-  font-family: "Helvetica Neue", Helvetica;
+  font-family: Fedra11-Normal, "Helvetica Neue", Helvetica;
 }
-/* line 711, ../sass/screen.scss */
+/* line 712, ../sass/screen.scss */
 #stage .highscore_scene .highscore #score_table th {
   font-size: 15px;
 }
-/* line 714, ../sass/screen.scss */
+/* line 715, ../sass/screen.scss */
 #stage .highscore_scene .highscore #score_table th.rank {
   width: 60px;
 }
-/* line 718, ../sass/screen.scss */
+/* line 719, ../sass/screen.scss */
 #stage .highscore_scene .highscore #score_table th.score {
   width: 80px;
 }
-/* line 722, ../sass/screen.scss */
+/* line 723, ../sass/screen.scss */
 #stage .highscore_scene .highscore #score_table th.date {
   width: 130px;
 }
-/* line 727, ../sass/screen.scss */
+/* line 728, ../sass/screen.scss */
 #stage .highscore_scene .highscore #score_table tr {
   font-size: 17px;
 }
-/* line 732, ../sass/screen.scss */
+/* line 733, ../sass/screen.scss */
 #stage .highscore_scene .highscore #score_table tr td.rank {
   font-size: 17px;
 }
-/* line 736, ../sass/screen.scss */
+/* line 737, ../sass/screen.scss */
 #stage .highscore_scene .highscore #score_table tr td.score {
   font-size: 17px;
 }
-/* line 743, ../sass/screen.scss */
+/* line 744, ../sass/screen.scss */
 #stage .highscore_scene .highscore.small {
   width: 280px;
   height: 350px;
   padding-left: 10px;
   padding-right: 10px;
 }
-/* line 749, ../sass/screen.scss */
+/* line 750, ../sass/screen.scss */
 #stage .highscore_scene .highscore.small #score_table {
   line-height: 23px;
 }
-/* line 753, ../sass/screen.scss */
+/* line 754, ../sass/screen.scss */
 #stage .highscore_scene .highscore.small #score_table th.rank {
   width: 53px;
 }
-/* line 757, ../sass/screen.scss */
+/* line 758, ../sass/screen.scss */
 #stage .highscore_scene .highscore.small #score_table th.name {
   font-size: 13px;
 }
-/* line 761, ../sass/screen.scss */
+/* line 762, ../sass/screen.scss */
 #stage .highscore_scene .highscore.small #score_table th.score {
   width: 63px;
 }
-/* line 765, ../sass/screen.scss */
+/* line 766, ../sass/screen.scss */
 #stage .highscore_scene .highscore.small #score_table th.date {
   width: 75px;
 }
-/* line 770, ../sass/screen.scss */
+/* line 771, ../sass/screen.scss */
 #stage .highscore_scene .highscore.small #score_table td {
   margin-top: 10px;
 }
-/* line 774, ../sass/screen.scss */
+/* line 775, ../sass/screen.scss */
 #stage .highscore_scene .highscore.small #score_table td.name {
   font-size: 13px;
   line-height: 15px;
 }
-/* line 782, ../sass/screen.scss */
+/* line 783, ../sass/screen.scss */
 #stage .highscore_scene .back_button {
   -webkit-animation: dropMenu 0.2s 1.7s ease 1 normal both;
   -moz-animation: dropMenu 0.2s 1.7s ease 1 normal both;
@@ -1445,7 +1451,7 @@ body {
   animation: dropMenu 0.2s 1.7s ease 1 normal both;
   margin-top: 10px;
 }
-/* line 786, ../sass/screen.scss */
+/* line 787, ../sass/screen.scss */
 #stage .highscore_scene .back_button.removeal {
   -webkit-anmiantion-delay: 0s;
   -moz-anmiantion-delay: 0s;
@@ -1453,16 +1459,16 @@ body {
   -o-anmiantion-delay: 0s;
   anmiantion-delay: 0s;
 }
-/* line 792, ../sass/screen.scss */
+/* line 793, ../sass/screen.scss */
 #stage .credits_scene {
-  font-family: "Helvetica Neue", Helvetica;
+  font-family: Fedra11-Normal, "Helvetica Neue", Helvetica;
   font-size: 35px;
   position: absolute;
   z-index: 10;
   width: 100%;
   top: 40px;
 }
-/* line 800, ../sass/screen.scss */
+/* line 801, ../sass/screen.scss */
 #stage .credits_scene .credits {
   -webkit-animation: dropScores 0.4s 0.6s ease 1 normal both;
   -moz-animation: dropScores 0.4s 0.6s ease 1 normal both;
@@ -1510,7 +1516,7 @@ body {
   z-index: 11;
   overflow: scroll;
 }
-/* line 811, ../sass/screen.scss */
+/* line 812, ../sass/screen.scss */
 #stage .credits_scene .credits.removal {
   -webkit-anmiantion-delay: 0.2s;
   -moz-anmiantion-delay: 0.2s;
@@ -1518,23 +1524,23 @@ body {
   -o-anmiantion-delay: 0.2s;
   anmiantion-delay: 0.2s;
 }
-/* line 815, ../sass/screen.scss */
+/* line 816, ../sass/screen.scss */
 #stage .credits_scene .credits h2 {
   font-size: 35px;
   padding-top: 30px;
 }
-/* line 820, ../sass/screen.scss */
+/* line 821, ../sass/screen.scss */
 #stage .credits_scene .credits .parse {
   font-family: "Raleway", "Helveltica Neue", Helvetica;
   font-weight: 100;
   font-size: 100px;
   line-height: 100px;
 }
-/* line 827, ../sass/screen.scss */
+/* line 828, ../sass/screen.scss */
 #stage .credits_scene .credits .tutorial {
   margin-top: 30px;
 }
-/* line 830, ../sass/screen.scss */
+/* line 831, ../sass/screen.scss */
 #stage .credits_scene .credits .tutorial .icon {
   background: url() no-repeat;
   background-size: contain;
@@ -1543,7 +1549,7 @@ body {
   float: left;
   margin-left: 80px;
 }
-/* line 839, ../sass/screen.scss */
+/* line 840, ../sass/screen.scss */
 #stage .credits_scene .credits .tutorial a {
   font-size: 15px;
   font-weight: 200;
@@ -1555,31 +1561,31 @@ body {
   color: #AEE9FF;
   cursor: pointer;
 }
-/* line 850, ../sass/screen.scss */
+/* line 851, ../sass/screen.scss */
 #stage .credits_scene .credits .tutorial a:hover {
   text-decoration: underline;
 }
-/* line 856, ../sass/screen.scss */
+/* line 857, ../sass/screen.scss */
 #stage .credits_scene .credits.small {
   width: 240px;
 }
-/* line 859, ../sass/screen.scss */
+/* line 860, ../sass/screen.scss */
 #stage .credits_scene .credits.small h2 {
   font-size: 28px;
 }
-/* line 863, ../sass/screen.scss */
+/* line 864, ../sass/screen.scss */
 #stage .credits_scene .credits.small p.parse {
   font-size: 85px;
 }
-/* line 868, ../sass/screen.scss */
+/* line 869, ../sass/screen.scss */
 #stage .credits_scene .credits.small .tutorial .icon {
   margin: 0px;
 }
-/* line 872, ../sass/screen.scss */
+/* line 873, ../sass/screen.scss */
 #stage .credits_scene .credits.small .tutorial a {
   padding: 0px;
 }
-/* line 879, ../sass/screen.scss */
+/* line 880, ../sass/screen.scss */
 #stage .credits_scene .back_button {
   -webkit-animation: dropMenu 0.2s 1s ease 1 normal both;
   -moz-animation: dropMenu 0.2s 1s ease 1 normal both;
@@ -1587,7 +1593,7 @@ body {
   animation: dropMenu 0.2s 1s ease 1 normal both;
   margin-top: 10px;
 }
-/* line 883, ../sass/screen.scss */
+/* line 884, ../sass/screen.scss */
 #stage .credits_scene .back_button.removal {
   -webkit-anmiantion-delay: 0s;
   -moz-anmiantion-delay: 0s;
@@ -1596,43 +1602,43 @@ body {
   anmiantion-delay: 0s;
 }
 
-/* line 890, ../sass/screen.scss */
+/* line 891, ../sass/screen.scss */
 .disabled {
   pointer-events: none;
 }
 
 @media all and (max-width: 600px) {
-  /* line 896, ../sass/screen.scss */
+  /* line 897, ../sass/screen.scss */
   #stage .menu_scene {
     margin-top: -10px;
   }
-  /* line 898, ../sass/screen.scss */
+  /* line 899, ../sass/screen.scss */
   #stage .menu_scene .title {
     height: 120px;
   }
-  /* line 902, ../sass/screen.scss */
+  /* line 903, ../sass/screen.scss */
   #stage .menu_scene .menu_item {
     margin-top: 20px;
   }
-  /* line 906, ../sass/screen.scss */
+  /* line 907, ../sass/screen.scss */
   #stage .menu_scene .menu_item:first {
     margin-top: 0;
   }
-  /* line 912, ../sass/screen.scss */
+  /* line 913, ../sass/screen.scss */
   #stage .game_scene #hud {
     top: 10px;
     left: 10px;
   }
-  /* line 915, ../sass/screen.scss */
+  /* line 916, ../sass/screen.scss */
   #stage .game_scene #hud p.small {
     font-size: 11px;
     height: 0px;
   }
-  /* line 919, ../sass/screen.scss */
+  /* line 920, ../sass/screen.scss */
   #stage .game_scene #hud p.small span {
     font-size: 11px;
   }
-  /* line 925, ../sass/screen.scss */
+  /* line 926, ../sass/screen.scss */
   #stage .game_scene .back_button {
     width: 27px;
     height: 27px;
