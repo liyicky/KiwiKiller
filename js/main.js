@@ -8,6 +8,7 @@ $(function(){
 
         new Stage({model: model}).render();
         new MenuScene({model: model});
+        new GameScene({model: model});
 
         model.set("scene", "menu");
 
@@ -137,7 +138,7 @@ $(function(){
 
       this.scene = this.options.scene;
       this.gameState = this.options.gameState;
-      this.$el.on(Utils.clickDownOrTouch(), this.nextSprite);
+      this.$el.on(Utils.clickUpOrTouch(), this.nextSprite);
 
       this.model.on("change:spriteIndex", this.renderSprites);
       this.model.on("run", this.renderRunning);
@@ -237,7 +238,7 @@ $(function(){
   var MenuScene = Backbone.View.extend({
     className: "menu_scene",
     events: {
-      "animationed .title": "cleanUp",
+      "animationend .title": "cleanUp",
       "webkitAnimationEnd .title": "cleanUp",
       "mozAnimationEnd .title": "cleanUp"
     },
@@ -277,7 +278,7 @@ $(function(){
     },
 
     renderRemoveScene: function() {
-      this.$(".title").removeClass("display").addclass("removal");
+      this.$(".title").removeClass("display").addClass("removal");
       this.$(".menu_item").addClass("removal");
       this.$(".title").css(Utils.bp() + "animation-name", "raiseTitle");
       this.$(".menu_item").css(Utils.bp() + "animation-name", "raiseMenu");
@@ -292,6 +293,150 @@ $(function(){
       return false;
     }
   });
+
+  var GameScene = Backbone.View.extend({
+    className: "game_scene",
+    events: {
+      "animationend": "cleanUp",
+      "webkitAnimationEnd": "cleanUp",
+      "mozAnimationEnd": "cleanUp"
+    },
+
+    scoreTemplate: _.template($("#_game_score").html()),
+    levelTemplate: _.template($("#_game_level").html()),
+    sceneName: "game",
+
+    initialize: function() {
+      _.bindAll(this);
+      this.catViews = [];
+
+      this.$el.on(Utils.clickUpOrTouch(), ".back_button", this.handleBackButton);
+
+      this.model.on("change:scene", this.renderSceneChange);
+      this.model.get("catCollection").on("add", this.renderAddCat);
+      this.model.on("change:score", this.renderScore);
+      this.model.on("change:level", this.renderLevel);
+      this.model.on("change:level", this.renderLevelLable);
+    },
+
+    handleBackButton: function(e) {
+      this.$(".back_button").addClass("disabled");
+      this.model.set("scene", "menu");
+    },
+
+    renderSceneChange: function(model, scene) {
+      if (model.previous("scene") === this.sceneName) {
+        this.renderRemoveScene();
+      } else if (scene === this.sceneName) {
+        this.render();
+      }
+      console.log("RenderSceneChange GameScene");
+      return this;
+    },
+
+    render: function() {
+      var self = this;
+
+      this.model.resetGameData();
+      this.$("#hud").remove();
+      this.$el.append("<div id='hud'></div>");
+
+      this.renderLevel();
+      setTimeout(function(){self.renderLevelLabel();}, 1200);
+      this.renderScore();
+      this.renderBackButton();
+      this.renderCats();
+      this.renderKiwi();
+
+      if ($("#stage ." + this.className).length <= 0) {
+        $("#stage").append(this.$el);
+      }
+
+      return this;
+    },
+
+    renderLevel: function() {
+     if (this.$("#game_level").length > 0) {
+       this.$("#game_level").replaceWith(this.levelTemplate({ level: this.model.get("level") }));
+     } else {
+       this.$("#hud").append(this.levelTemplate({ level: this.model.get("level") }));
+     }
+
+     return this;
+    },
+
+    renderLevelLable: function() {
+      this.$el.append("<p class='level_label'>LEVEL " + this.model.get("level") + "<br>KILL</p>");
+      setTimeout(function(){ this.$(".level_label").addClass("removal"); }, 3000);
+      setTimeout(function(){ this.$(".level_label").remove(); }, 3300);
+
+      return this;
+    },
+
+    renderScore: function() {
+      if (this.$("#game_score").length > 0) {
+        this.$("#game_score").replaceWith(this.scoreTemplate({ socre: this.model.get("score") }));
+      } else {
+        this.$("#hud").append(this.scoreTemplate({ score: this.model.get("score") }));
+      }
+
+      return this;
+    },
+
+    renderBackButton: function() {
+      if (this.$(".back_button").length > 0) {
+        this.$(".back_button").replaceWith("<div class='back_button'>X</div>");
+      } else {
+        this.$el.append("<div class='back_button'>X</div>");
+      }
+
+      return this;
+    },
+
+    renderCats: function() {
+      this.model.addCats();
+      return this;
+    },
+
+    renderKiwi: function() {
+      return this;
+    },
+
+    renderAddCat: function(catModel, collection, options) {
+      var catView = new CatView({
+        model: catModel,
+        gameState: this.model,
+        scene: this.$el
+      });
+
+      catView.render();
+      this.catViews.push(catView);
+      return this;
+    },
+
+    renderRemoveScene: function() {
+      this.$(".back_button").css(Utils.bp() + "animation-name", "xRaise");
+      this.$("#hud p").css(Utils.bp() + "animation-name", "removeHUD");
+      this.$(".cat").css(Utils.bp() + "transition-duration", "0.3s");
+
+      _.each(this.catViews, function(catView) {
+        catView.renderRemove();
+      });
+
+      this.model.get("catCollection").reset();
+
+      return this;
+    },
+
+    cleanUp: function(e) {
+      if (this.model.get("scene") !== this.sceneName && $(e.target).hasClass("back_button")) {
+        this.$el.empty();
+      }
+
+      return false;
+    }
+  });
+
 
 
 
@@ -336,7 +481,9 @@ var Utils = {
 
   nextTick: function(func) {
     setTimeout(func, 0);
-  }, clickUpOrTouch: function(func) {
+  },
+
+  clickUpOrTouch: function(func) {
     return 'ontouchstart' in window ? "touchstart": "mouseup";
   }
 };

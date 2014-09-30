@@ -114,7 +114,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 @-webkit-keyframes dropTitle {
   0% {
     margin-top: -50%;
-    -webkit-transfrom: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
   }
   70% {
     -webkit-transform: rotate(10deg);
@@ -127,7 +127,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 @-moz-keyframes dropTitle {
   0% {
     margin-top: -50%;
-    -moz-transfrom: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
   }
   70% {
     -webkit-transform: rotate(10deg);
@@ -140,7 +140,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 @keyframes dropTitle {
   0% {
     margin-top: -50%;
-    transfrom: rotate(-10deg);
+    transform: rotate(-10deg);
   }
   70% {
     -webkit-transform: rotate(10deg);
@@ -183,7 +183,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 @keyframes raiseTitle {
   0% {
     margin-top: 10%;
-    transfrom: rotate(2deg);
+    transform: rotate(2deg);
   }
   10% {
     margin-top: 10%;
@@ -699,11 +699,11 @@ body {
 }
 /* line 397, ../sass/screen.scss */
 #stage .menu_scene .title.removal {
-  -webkit-anmiantion-delay: 0.3;
-  -moz-anmiantion-delay: 0.3;
-  -ms-anmiantion-delay: 0.3;
-  -o-anmiantion-delay: 0.3;
-  anmiantion-delay: 0.3;
+  -webkit-animation-delay: 0.3;
+  -moz-animation-delay: 0.3;
+  -ms-animation-delay: 0.3;
+  -o-animation-delay: 0.3;
+  animation-delay: 0.3;
 }
 /* line 402, ../sass/screen.scss */
 #stage .menu_scene .menu_item {
@@ -714,67 +714,67 @@ body {
 }
 /* line 405, ../sass/screen.scss */
 #stage .menu_scene .menu_item.first {
-  -webkit-anmiantion-delay: 1.1s;
-  -moz-anmiantion-delay: 1.1s;
-  -ms-anmiantion-delay: 1.1s;
-  -o-anmiantion-delay: 1.1s;
-  anmiantion-delay: 1.1s;
+  -webkit-animation-delay: 1.1s;
+  -moz-animation-delay: 1.1s;
+  -ms-animation-delay: 1.1s;
+  -o-animation-delay: 1.1s;
+  animation-delay: 1.1s;
 }
 /* line 408, ../sass/screen.scss */
 #stage .menu_scene .menu_item.first.removal {
-  -webkit-anmiantion-delay: 0s;
-  -moz-anmiantion-delay: 0s;
-  -ms-anmiantion-delay: 0s;
-  -o-anmiantion-delay: 0s;
-  anmiantion-delay: 0s;
+  -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s;
+  -ms-animation-delay: 0s;
+  -o-animation-delay: 0s;
+  animation-delay: 0s;
 }
 /* line 413, ../sass/screen.scss */
 #stage .menu_scene .menu_item.second {
-  -webkit-anmiantion-delay: 1.2s;
-  -moz-anmiantion-delay: 1.2s;
-  -ms-anmiantion-delay: 1.2s;
-  -o-anmiantion-delay: 1.2s;
-  anmiantion-delay: 1.2s;
+  -webkit-animation-delay: 1.2s;
+  -moz-animation-delay: 1.2s;
+  -ms-animation-delay: 1.2s;
+  -o-animation-delay: 1.2s;
+  animation-delay: 1.2s;
 }
 /* line 416, ../sass/screen.scss */
 #stage .menu_scene .menu_item.second.removal {
-  -webkit-anmiantion-delay: 0.1s;
-  -moz-anmiantion-delay: 0.1s;
-  -ms-anmiantion-delay: 0.1s;
-  -o-anmiantion-delay: 0.1s;
-  anmiantion-delay: 0.1s;
+  -webkit-animation-delay: 0.1s;
+  -moz-animation-delay: 0.1s;
+  -ms-animation-delay: 0.1s;
+  -o-animation-delay: 0.1s;
+  animation-delay: 0.1s;
 }
 /* line 421, ../sass/screen.scss */
 #stage .menu_scene .menu_item.third {
-  -webkit-anmiantion-delay: 1.3s;
-  -moz-anmiantion-delay: 1.3s;
-  -ms-anmiantion-delay: 1.3s;
-  -o-anmiantion-delay: 1.3s;
-  anmiantion-delay: 1.3s;
+  -webkit-animation-delay: 1.3s;
+  -moz-animation-delay: 1.3s;
+  -ms-animation-delay: 1.3s;
+  -o-animation-delay: 1.3s;
+  animation-delay: 1.3s;
 }
 /* line 424, ../sass/screen.scss */
 #stage .menu_scene .menu_item.third.removal {
-  -webkit-anmiantion-delay: 0.2s;
-  -moz-anmiantion-delay: 0.2s;
-  -ms-anmiantion-delay: 0.2s;
-  -o-anmiantion-delay: 0.2s;
-  anmiantion-delay: 0.2s;
+  -webkit-animation-delay: 0.2s;
+  -moz-animation-delay: 0.2s;
+  -ms-animation-delay: 0.2s;
+  -o-animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 /* line 429, ../sass/screen.scss */
 #stage .menu_scene .menu_item.forth {
-  -webkit-anmiantion-delay: 1.4s;
-  -moz-anmiantion-delay: 1.4s;
-  -ms-anmiantion-delay: 1.4s;
-  -o-anmiantion-delay: 1.4s;
-  anmiantion-delay: 1.4s;
+  -webkit-animation-delay: 1.4s;
+  -moz-animation-delay: 1.4s;
+  -ms-animation-delay: 1.4s;
+  -o-animation-delay: 1.4s;
+  animation-delay: 1.4s;
 }
 /* line 432, ../sass/screen.scss */
 #stage .menu_scene .menu_item.forth.removal {
-  -webkit-anmiantion-delay: 0.3s;
-  -moz-anmiantion-delay: 0.3s;
-  -ms-anmiantion-delay: 0.3s;
-  -o-anmiantion-delay: 0.3s;
-  anmiantion-delay: 0.3s;
+  -webkit-animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
+  -ms-animation-delay: 0.3s;
+  -o-animation-delay: 0.3s;
+  animation-delay: 0.3s;
 }
 /* line 439, ../sass/screen.scss */
 #stage .menu_item {
@@ -897,20 +897,20 @@ body {
 /* line 489, ../sass/screen.scss */
 #stage .game_scene #hud #game_score {
   margin-top: 20px;
-  -webkit-anmiantion-delay: 0.1s;
-  -moz-anmiantion-delay: 0.1s;
-  -ms-anmiantion-delay: 0.1s;
-  -o-anmiantion-delay: 0.1s;
-  anmiantion-delay: 0.1s;
+  -webkit-animation-delay: 0.1s;
+  -moz-animation-delay: 0.1s;
+  -ms-animation-delay: 0.1s;
+  -o-animation-delay: 0.1s;
+  animation-delay: 0.1s;
 }
 /* line 494, ../sass/screen.scss */
 #stage .game_scene #hud #game_lives {
   margin-top: 20px;
-  -webkit-anmiantion-delay: 0.2s;
-  -moz-anmiantion-delay: 0.2s;
-  -ms-anmiantion-delay: 0.2s;
-  -o-anmiantion-delay: 0.2s;
-  anmiantion-delay: 0.2s;
+  -webkit-animation-delay: 0.2s;
+  -moz-animation-delay: 0.2s;
+  -ms-animation-delay: 0.2s;
+  -o-animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 /* line 499, ../sass/screen.scss */
 #stage .game_scene #hud span {
@@ -1276,11 +1276,11 @@ body {
 }
 /* line 659, ../sass/screen.scss */
 #stage .game_over_scene .menu_button.removal {
-  -webkit-anmiantion-delay: 0.1s;
-  -moz-anmiantion-delay: 0.1s;
-  -ms-anmiantion-delay: 0.1s;
-  -o-anmiantion-delay: 0.1s;
-  anmiantion-delay: 0.1s;
+  -webkit-animation-delay: 0.1s;
+  -moz-animation-delay: 0.1s;
+  -ms-animation-delay: 0.1s;
+  -o-animation-delay: 0.1s;
+  animation-delay: 0.1s;
 }
 /* line 664, ../sass/screen.scss */
 #stage .game_over_scene .replay_button {
@@ -1293,11 +1293,11 @@ body {
 }
 /* line 669, ../sass/screen.scss */
 #stage .game_over_scene .replay_button.removal {
-  -webkit-anmiantion-delay: 0.2s;
-  -moz-anmiantion-delay: 0.2s;
-  -ms-anmiantion-delay: 0.2s;
-  -o-anmiantion-delay: 0.2s;
-  anmiantion-delay: 0.2s;
+  -webkit-animation-delay: 0.2s;
+  -moz-animation-delay: 0.2s;
+  -ms-animation-delay: 0.2s;
+  -o-animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 /* line 674, ../sass/screen.scss */
 #stage .game_over_scene .menu_item.small {
@@ -1362,11 +1362,11 @@ body {
 }
 /* line 698, ../sass/screen.scss */
 #stage .highscore_scene .highscore.removal {
-  -webkit-anmiantion-delay: 0.2s;
-  -moz-anmiantion-delay: 0.2s;
-  -ms-anmiantion-delay: 0.2s;
-  -o-anmiantion-delay: 0.2s;
-  anmiantion-delay: 0.2s;
+  -webkit-animation-delay: 0.2s;
+  -moz-animation-delay: 0.2s;
+  -ms-animation-delay: 0.2s;
+  -o-animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 /* line 702, ../sass/screen.scss */
 #stage .highscore_scene .highscore p {
@@ -1453,11 +1453,11 @@ body {
 }
 /* line 787, ../sass/screen.scss */
 #stage .highscore_scene .back_button.removeal {
-  -webkit-anmiantion-delay: 0s;
-  -moz-anmiantion-delay: 0s;
-  -ms-anmiantion-delay: 0s;
-  -o-anmiantion-delay: 0s;
-  anmiantion-delay: 0s;
+  -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s;
+  -ms-animation-delay: 0s;
+  -o-animation-delay: 0s;
+  animation-delay: 0s;
 }
 /* line 793, ../sass/screen.scss */
 #stage .credits_scene {
@@ -1518,11 +1518,11 @@ body {
 }
 /* line 812, ../sass/screen.scss */
 #stage .credits_scene .credits.removal {
-  -webkit-anmiantion-delay: 0.2s;
-  -moz-anmiantion-delay: 0.2s;
-  -ms-anmiantion-delay: 0.2s;
-  -o-anmiantion-delay: 0.2s;
-  anmiantion-delay: 0.2s;
+  -webkit-animation-delay: 0.2s;
+  -moz-animation-delay: 0.2s;
+  -ms-animation-delay: 0.2s;
+  -o-animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 /* line 816, ../sass/screen.scss */
 #stage .credits_scene .credits h2 {
@@ -1595,11 +1595,11 @@ body {
 }
 /* line 884, ../sass/screen.scss */
 #stage .credits_scene .back_button.removal {
-  -webkit-anmiantion-delay: 0s;
-  -moz-anmiantion-delay: 0s;
-  -ms-anmiantion-delay: 0s;
-  -o-anmiantion-delay: 0s;
-  anmiantion-delay: 0s;
+  -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s;
+  -ms-animation-delay: 0s;
+  -o-animation-delay: 0s;
+  animation-delay: 0s;
 }
 
 /* line 891, ../sass/screen.scss */

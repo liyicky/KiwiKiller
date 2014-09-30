@@ -19,7 +19,7 @@
 }
 
 @mixin animation-delay($delay) {
-  @include experimental(anmiantion-delay, $delay);
+  @include experimental(animation-delay, $delay);
 }
 
 @-webkit-keyframes moveLeft {
@@ -52,17 +52,17 @@
   to {margon-left: 0%}
 }
 @-webkit-keyframes dropTitle {
-  0% {margin-top: -50%; -webkit-transfrom: rotate(-10deg);}
+  0% {margin-top: -50%; -webkit-transform: rotate(-10deg);}
   70% {-webkit-transform: rotate(10deg);}
   100% {margin-top: 10%; -webkit-transform: rotate(2deg);}
 }
 @-moz-keyframes dropTitle {
-  0% {margin-top: -50%; -moz-transfrom: rotate(-10deg);}
+  0% {margin-top: -50%; -moz-transform: rotate(-10deg);}
   70% {-webkit-transform: rotate(10deg);}
   100% {margin-top: 10%; -moz-transform: rotate(2deg);}
 }
 @keyframes dropTitle {
-  0% {margin-top: -50%; transfrom: rotate(-10deg);}
+  0% {margin-top: -50%; transform: rotate(-10deg);}
   70% {-webkit-transform: rotate(10deg);}
   100% {margin-top: 10%; transform: rotate(2deg);}
 }
@@ -78,7 +78,7 @@
 }
 
 @keyframes raiseTitle {
-  0% {margin-top: 10%; transfrom: rotate(2deg);}
+  0% {margin-top: 10%; transform: rotate(2deg);}
   10% {margin-top: 10%; transform: rotate(-10deg);}
   100% {margin-top: -50%; margin-bottom: 70%; transform: rotate(2deg);}
 }

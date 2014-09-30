@@ -42,6 +42,16 @@
     </div>
   </script>
 
+  <script type="text/template" id="_game_score">
+    <% var sizeClass = $(window).width() > 550 ? "large" : "small"; %>
+    <p id="game_score" class="<%= sizeClass %>">SCORE: <%= score %><span> cats</span></p>
+  </script>
+
+  <script type="text/template" id="_game_level">
+    <% var sizeClass = $(window).width() > 550 ? "large" : "small"; %>
+    <p id="game_level" class="<%= sizeClass %>">LEVEL: <&= level %></p>
+  </script>
+
   <script type="text/template" id="_cat">
     <% var sizeClass = $(window).width() > 550 ? "large" : "small"; %>
     <% for (var i=0;i<5;i++) { %>
