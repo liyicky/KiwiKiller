@@ -100,6 +100,10 @@ $(function(){
       collectionIndex: 0
     },
 
+    initialize: function() {
+      _.bindAll(this);
+    },
+
     nextSprite: function() {
       this.set("spriteIndex", this.get("spriteIndex") + 1);
       if (this.isSafe()) {
@@ -108,7 +112,7 @@ $(function(){
     },
 
     isSafe: function() {
-      return this.get("spriteIndex") >= EggModel.NumSprite;
+      return this.get("spriteIndex") >= CatModel.NumSprites;
     },
 
     catHitKiwi: function() {
@@ -165,16 +169,21 @@ $(function(){
       }
       var speed = 100 * this.gameState.get("speedX") + Math.random() * 100 - 50;
 
-      var right = $("#stage").width + 220;
+      //var right = $("#stage").width + 220;
+
+      var left = Math.random() * ($(window).width() - 100) + 30;
+      var top = $("#stage").height() - 220;
+
       this.$el.css(Utils.bp() + "transition-delay", delay + 5);
       this.$el.css(Utils.bp() + "transition-duration", $(window).width() / speed + "s");
-      this.$el.css(Utils.bp() + "transition-property", "right opacity");
+      this.$el.css(Utils.bp() + "transition-property", "top opacity");
       this.$el.css(Utils.bp() + "transition-timing-function", "linear");
+      this.$el.css("left", left + "px");
 
       this.scene.append(this.$el);
 
       Utils.nextTick(function() {
-        self.$el.css("right", right + "px");
+        self.$el.css("top", top + "px");
       });
     },
 
@@ -188,7 +197,7 @@ $(function(){
       this.$el.addClass("running");
       this.$el.css(Utils.bp() + "transition-delay", "0s");
       this.$el.css(Utils.bp() + "transition-duration", "1s");
-      this.$el.css(Utils.bp() + "transition-property", "right");
+      this.$el.css(Utils.bp() + "transition-property", "top");
       this.$el.css(Utils.bp() + "transition-timing-function", "linear");
     },
 
@@ -206,7 +215,7 @@ $(function(){
       var self = this;
       if (e.originalEvent.propertyName === "opacity") {
         self.renderRemove();
-      } else if (e.originalEvent.propertyName === "right") {
+      } else if (e.originalEvent.propertyName === "top") {
         self.model.catHitKiwi();
       } else if (e.originalEvent.propertyName === Utils.bp() + "transform" || "transform") {
         self.renderHidding();
@@ -342,7 +351,7 @@ $(function(){
       this.$el.append("<div id='hud'></div>");
 
       this.renderLevel();
-      setTimeout(function(){self.renderLevelLabel();}, 1200);
+      setTimeout(function(){self.renderLevelLable();}, 1200);
       this.renderScore();
       this.renderBackButton();
       this.renderCats();

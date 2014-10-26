@@ -535,6 +535,25 @@ body {
       }
     }
 
+    .cat {
+      width: 40px;
+      height: 34px;
+      background: url(/assets/cat_sprite_1.gif) no-repeat;
+      @include image-2x("/assets/cat_sprite_1@2x.gif", 80px, 48px);
+      background-size: contain;
+      position: absolute;
+      top: -100px;
+      z-index: 3;
+
+      .sprite {
+        height: 100px;
+      }
+
+      &.running {
+        top: -1200px !important;
+      }
+    }
+
     .back_button {
       @include animation(xDrop, 0.5s, 0s, linear);
       @include actionButton(#29D87E, #17B362, #30F387, #0DE46D, #11793A, #19A04F);
