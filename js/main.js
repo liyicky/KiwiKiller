@@ -169,21 +169,19 @@ $(function(){
       }
       var speed = 100 * this.gameState.get("speedX") + Math.random() * 100 - 50;
 
-      //var right = $("#stage").width + 220;
-
-      var left = Math.random() * ($(window).width() - 100) + 30;
-      var top = $("#stage").height() - 220;
+      var right = $("#stage").width() + 220;
+      var top = $("#stage").height() - 200;
 
       this.$el.css(Utils.bp() + "transition-delay", delay + 5);
       this.$el.css(Utils.bp() + "transition-duration", $(window).width() / speed + "s");
-      this.$el.css(Utils.bp() + "transition-property", "top opacity");
+      this.$el.css(Utils.bp() + "transition-property", "right opacity");
       this.$el.css(Utils.bp() + "transition-timing-function", "linear");
-      this.$el.css("left", left + "px");
+      this.$el.css("top", top + "px");
 
       this.scene.append(this.$el);
 
       Utils.nextTick(function() {
-        self.$el.css("top", top + "px");
+        self.$el.css("right", right + "px");
       });
     },
 
@@ -384,7 +382,7 @@ $(function(){
 
     renderScore: function() {
       if (this.$("#game_score").length > 0) {
-        this.$("#game_score").replaceWith(this.scoreTemplate({ socre: this.model.get("score") }));
+        this.$("#game_score").replaceWith(this.scoreTemplate({ score: this.model.get("score") }));
       } else {
         this.$("#hud").append(this.scoreTemplate({ score: this.model.get("score") }));
       }

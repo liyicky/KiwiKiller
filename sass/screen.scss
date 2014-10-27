@@ -542,7 +542,7 @@ body {
       @include image-2x("/assets/cat_sprite_1@2x.gif", 80px, 48px);
       background-size: contain;
       position: absolute;
-      top: -100px;
+      right: -100px;
       z-index: 3;
 
       .sprite {
