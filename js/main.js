@@ -195,7 +195,7 @@ $(function(){
       this.$el.addClass("running");
       this.$el.css(Utils.bp() + "transition-delay", "0s");
       this.$el.css(Utils.bp() + "transition-duration", "1s");
-      this.$el.css(Utils.bp() + "transition-property", "top");
+      this.$el.css(Utils.bp() + "transition-property", "right");
       this.$el.css(Utils.bp() + "transition-timing-function", "linear");
     },
 
