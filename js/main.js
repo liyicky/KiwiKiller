@@ -76,6 +76,12 @@ $(function(){
       this.get("catCollection").remove(catModel);
     },
 
+    addKiwi: function() {
+      this.get("kiwiCollection").add(new KiwiModel({
+        collectionIndex: 0
+      }));
+    },
+
     resetGameData: function() {
       this.set(GameState.DefaultGameData);
     },
@@ -92,6 +98,21 @@ $(function(){
       speedX: 1
     }
   });
+
+
+
+  var KiwiModel = Backbone.Model.extends({
+    defaults: {
+      spriteIndex: 1,
+      collectionIndex: 0
+    },
+
+    initialize: function() {
+      _.bindAll(this);
+    }
+  });
+
+
 
 
   var CatModel = Backbone.Model.extend({
@@ -406,6 +427,7 @@ $(function(){
     },
 
     renderKiwi: function() {
+      this.model.addKiwi();
       return this;
     },
 
