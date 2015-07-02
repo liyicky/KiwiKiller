@@ -52,6 +52,11 @@
     <p id="game_level" class="<%= sizeClass %>">LEVEL: <%= level %></p>
   </script>
 
+  <script type="text/template" id="_kiwi">
+    <% var sizeClass = $(window).width() > 550 ? "large" : "small"; %>
+    <div id="kiwi" class="sprite <%= sizeClass %> kiwi_sprite_1" />
+  </script>
+
   <script type="text/template" id="_cat">
     <% var sizeClass = $(window).width() > 550 ? "large" : "small"; %>
     <% for (var i=0;i<5;i++) { %>

@@ -25,6 +25,7 @@ $(function(){
     defaults: {
       scene: "",
       catCollection: null,
+      kiwiCollection: null,
       speedX: 1
     },
 
@@ -32,6 +33,7 @@ $(function(){
       _.bindAll(this);
 
       this.set("catCollection", new Backbone.Collection());
+      this.set("kiwiCollection", new Backbone.Collection());
 
       var query = new Parse.Query("HighScore");
       query.descending("score");
@@ -78,7 +80,7 @@ $(function(){
 
     addKiwi: function() {
       this.get("kiwiCollection").add(new KiwiModel({
-        collectionIndex: 0
+        collectionIndex: 1
       }));
     },
 
@@ -101,7 +103,7 @@ $(function(){
 
 
 
-  var KiwiModel = Backbone.Model.extends({
+  var KiwiModel = Backbone.Model.extend({
     defaults: {
       spriteIndex: 1,
       collectionIndex: 0
@@ -111,9 +113,6 @@ $(function(){
       _.bindAll(this);
     }
   });
-
-
-
 
   var CatModel = Backbone.Model.extend({
     defaults: {
@@ -143,6 +142,50 @@ $(function(){
     }
   }, {
     NumSprites: 5
+  });
+
+  var KiwiView = Backbone.View.extend({
+    className: "kiwi",
+    spriteClass: ".kiwi_sprite_",
+    kiwiTemplate: _.template($("#_kiwi").html()),
+
+    scene: null,
+
+    events: {
+      "webkitTransitionEnd": "handleTransitionEnded",
+      "mozTransitionEnd": "handleTransitionEnded",
+      "transitioned": "handleTransitionEnded"
+    },
+
+    initialize: function() {
+      _.bindAll(this);
+
+      this.scene = this.options.scene;
+      this.gameState = this.options.gameState;
+
+      this.model.on("change:spriteIndex", this.renderSprites);
+    },
+
+    render: function() {
+      var self = this;
+      var right = $("#stage").width() / 2;
+      var top = $("#stage").height() - 200;
+      this.$el.css("top", top + "px");
+      this.$el.css("right", right + "px");
+      this.scene.append(this.$el);
+    },
+
+    handleTransitionEnded: function(e) {
+      var self = this;
+      if (e.originalEvent.propertyName === "opacity") {
+        self.renderRemove();
+      } else if (e.originalEvent.propertyName === "top") {
+        self.model.catHitKiwi();
+      } else if (e.originalEvent.propertyName === Utils.bp() + "transform" || "transform") {
+        self.renderHidding();
+      }
+      return false;
+    }
   });
 
   var CatView = Backbone.View.extend({
@@ -342,6 +385,7 @@ $(function(){
 
       this.model.on("change:scene", this.renderSceneChange);
       this.model.get("catCollection").on("add", this.renderAddCat);
+      this.model.get("kiwiCollection").on("add", this.renderAddKiwi);
       this.model.on("change:score", this.renderScore);
       this.model.on("change:level", this.renderLevel);
       this.model.on("change:level", this.renderLevelLable);
@@ -443,6 +487,17 @@ $(function(){
       return this;
     },
 
+    renderAddKiwi: function(kiwiModel, collection, options) {
+      var kiwiView = new KiwiView({
+        model: kiwiModel,
+        gameState: this.model,
+        scene: this.$el
+      });
+
+      kiwiView.render();
+      return this;
+    },
+
     renderRemoveScene: function() {
       this.$(".back_button").css(Utils.bp() + "animation-name", "xRaise");
       this.$("#hud p").css(Utils.bp() + "animation-name", "removeHUD");
@@ -452,7 +507,10 @@ $(function(){
         catView.renderRemove();
       });
 
+      kiwiView.renderRemove();
+
       this.model.get("catCollection").reset();
+      this.model.get("kiwiCollection").reset();
 
       return this;
     },
